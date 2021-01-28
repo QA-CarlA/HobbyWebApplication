@@ -36,7 +36,7 @@ public class PlayerService
 	//CREATE
 	public PlayerDTO create(PlayerDomain model)
 	{
-		return this.mapper.map(model,  PlayerDTO.class);
+		return mapToDTO(this.repo.save(model));
 	}
 	
 	//READ
