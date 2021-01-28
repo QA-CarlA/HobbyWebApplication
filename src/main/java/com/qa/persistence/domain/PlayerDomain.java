@@ -22,8 +22,7 @@ public class PlayerDomain
 	private Long playerID;
 	
 	@NotNull
-	private String playerFirstName;
-	private String playerLastName;
+	private String playerName;
 	private String playerIGN;
 	
 	@ManyToOne
