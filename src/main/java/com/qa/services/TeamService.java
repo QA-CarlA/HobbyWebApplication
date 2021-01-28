@@ -36,7 +36,7 @@ public class TeamService
 	//CREATE
 	public TeamDTO create(TeamDomain model)
 	{
-		return this.mapper.map(model,  TeamDTO.class);
+		return mapToDTO(this.repo.save(model));
 	}
 	
 	//READ
