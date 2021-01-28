@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
@@ -24,4 +25,7 @@ public class PlayerDomain
 	private String playerFirstName;
 	private String playerLastName;
 	private String playerIGN;
+	
+	@ManyToOne
+	private TeamDomain team;
 }
