@@ -28,7 +28,29 @@ const createPlayer = () =>
     const playerNameValue = playerName.value;
     const playerIGNValue = playerIGN.value;
     const teamIDValue = teamID.value;
-    if(playerNameValue != "" || playerIGNValue != "" || teamIDValue > 0)
+    let message = "";
+    let boolName = true;
+    let boolIGN = true;
+    let boolTeamID = true;
+    if(playerNameValue == "")
+    {
+        boolName = false;
+        message = "Please enter a valid player name";
+        output(createDisplay, message);
+    }
+    if(playerIGNValue == "")
+    {
+        boolIGN = false;
+        message = "Please enter a valid IGN";
+        output(createDisplay, message);
+    }
+    if(teamIDValue <= 0)
+    {
+        boolTeamID = false;
+        message = "Please enter a valid team ID";
+        output(createDisplay, message);
+    }
+    if(boolName == true && boolIGN == true && boolTeamID == true)
     {
         fetch(`http://localhost:8081/player/create` ,
         {
@@ -62,12 +84,6 @@ const createPlayer = () =>
 
         });
     }
-    else
-    {
-        let failure = `Please make sure every fields have been entered`;
-        output(createDisplay, failure);
-        return output;
-    }
 }
 
 
@@ -75,13 +91,21 @@ const viewPlayer = () =>
 {
     viewPlayerDisplay.innerHTML = "";
     const viewPlayerIDValue = viewPlayerID.value;
+    let message = "";
     fetch(`http://localhost:8081/player/read/${viewPlayerIDValue}`)
     .then(response => response.json())
     .then(json =>
         {
-            console.log(json);
-            let details = `Player ID: ${json.playerID}, Player Name: ${json.playerName}, Player IGN: ${json.playerIGN}`;
-            output(viewPlayerDisplay, details);
+            if (json.playerName != undefined)
+            {
+                message = `Player ID: ${json.playerID}, Player Name: ${json.playerName}, Player IGN: ${json.playerIGN}`;
+                output(viewPlayerDisplay, details);
+            }
+            else
+            {
+                message = "Player does not exist";
+                output(viewPlayerDisplay, details);
+            }
         }).catch(err => console.error("Something went wrong: " + err))
 }
 
@@ -108,8 +132,40 @@ const updatePlayer = () =>
     const updateNameValue = updateName.value;
     const updateIGNValue = updateIGN.value;
     const updateTeamIDValue = updateTeamID.value;
+    let message = "";
+    let boolID = true;
+    let boolName = true;
+    let boolIGN = true;
+    let boolTeamID = true;
+    if(updateIDValue <= 0)
+    {
+        boolID = false;
+        message = "Please enter a valid player ID";
+        output(updateDisplay, message);
+    }
+    if(updateNameValue == "")
+    {
+        boolName = false;
+        message = "Please enter a valid player name";
+        output(updateDisplay, message);
+    }
+    if(updateIGNValue == "")
+    {
+        boolIGN = false;
+        message = "Please enter a valid IGN";
+        output(updateDisplay, message);
+    }
+    if(updateTeamIDValue <= 0)
+    {
+        boolTeamID = false;
+        message = "Please enter a valid team ID";
+        output(updateDisplay, message);
+    }
     let update = false;
-    fetch(`http://localhost:8081/player/update/${updateIDValue}` ,
+
+    if(boolID == true && boolName == true && boolIGN == true && boolTeamID == true)
+    {
+        fetch(`http://localhost:8081/player/update/${updateIDValue}` ,
         {
             method: 'PUT',
             body: JSON.stringify({
@@ -133,17 +189,17 @@ const updatePlayer = () =>
                 }
             }).then(json => 
                 {
-                    let details = null;
                     if(update == true)
                     {
-                        details = 'Update Successful!';
+                        message = 'Player has been successfully updated!';
                     }
                     else
                     {
-                        details = 'Update Failed!';
+                        message = 'Player Update Failed, Please enter a valid team ID';
                     }
-                    output(updateDisplay, details);
+                    output(updateDisplay, message);
                 }).catch(err => console.error(err))
+    }
 }
 
 const deletePlayer = () =>
@@ -160,7 +216,7 @@ const deletePlayer = () =>
         {
             if(response.status != 204)
             {
-                display = "Player could not be deleted";
+                display = "Invalid ID";
             }
             else
             {
