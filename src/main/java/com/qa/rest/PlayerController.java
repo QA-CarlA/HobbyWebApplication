@@ -63,7 +63,7 @@ public class PlayerController
 		
 		//DELETE
 		@DeleteMapping("/delete/{playerID}")
-		public ResponseEntity<PlayerDTO> deletePlayer(@PathVariable Long id)
+		public ResponseEntity<PlayerDTO> deletePlayer(@PathVariable("playerID") Long id)
 		{
 			return this.service.deletePlayer(id) ? 
 					new ResponseEntity<>(HttpStatus.NO_CONTENT) :
