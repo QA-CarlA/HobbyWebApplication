@@ -23,6 +23,7 @@ public class PlayerDomain
 	
 	@NotNull
 	private String playerName;
+	@NotNull
 	private String playerIGN;
 	
 	@ManyToOne

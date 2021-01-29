@@ -41,10 +41,10 @@ public class TeamController
 		}
 		
 		//READBYID
-		@GetMapping("/read/{id}")
-		public ResponseEntity<TeamDTO> readTeam(@PathVariable("teamID") Long id)
+		@GetMapping("/read/{teamID}")
+		public ResponseEntity<TeamDTO> readTeam(@PathVariable("teamID") Long teamID)
 		{
-			return ResponseEntity.ok(this.service.readTeam(id));
+			return ResponseEntity.ok(this.service.readTeam(teamID));
 		}
 		
 		//CREATE
@@ -55,15 +55,15 @@ public class TeamController
 		}
 		
 		//UPDATE
-		@PutMapping("/update/{id}")
+		@PutMapping("/update/{teamID}")
 		public ResponseEntity<TeamDTO> update(@PathVariable("teamID") Long id, @RequestBody TeamDomain updateTeam)
 		{
 			return new ResponseEntity<>(this.service.updateTeam(id, updateTeam), HttpStatus.ACCEPTED);
 		}
 		
 		//DELETE
-		@DeleteMapping("/delete/{id}")
-		public ResponseEntity<TeamDTO> deleteTeam(@PathVariable Long id)
+		@DeleteMapping("/delete/{teamID}")
+		public ResponseEntity<TeamDTO> deleteTeam(@PathVariable("teamID") Long id)
 		{
 			return this.service.deleteTeam(id) ? 
 					new ResponseEntity<>(HttpStatus.NO_CONTENT) :

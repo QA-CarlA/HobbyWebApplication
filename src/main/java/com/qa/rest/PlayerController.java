@@ -41,10 +41,10 @@ public class PlayerController
 		}
 		
 		//READBYID
-		@GetMapping("/read/{id}")
-		public ResponseEntity<PlayerDTO> readPlayer(@PathVariable("playerID") Long id)
+		@GetMapping("/read/{playerID}")
+		public ResponseEntity<PlayerDTO> readPlayer(@PathVariable("playerID") Long playerID) 
 		{
-			return ResponseEntity.ok(this.service.readPlayer(id));
+			return ResponseEntity.ok(this.service.readPlayer(playerID));
 		}
 		
 		//CREATE
@@ -55,15 +55,15 @@ public class PlayerController
 		}
 		
 		//UPDATE
-		@PutMapping("/update/{id}")
+		@PutMapping("/update/{playerID}")
 		public ResponseEntity<PlayerDTO> update(@PathVariable("playerID") Long id, @RequestBody PlayerDomain updatePlayer)
 		{
 			return new ResponseEntity<>(this.service.updatePlayer(id, updatePlayer), HttpStatus.ACCEPTED);
 		}
 		
 		//DELETE
-		@DeleteMapping("/delete/{id}")
-		public ResponseEntity<PlayerDTO> deletePlayer(@PathVariable Long id)
+		@DeleteMapping("/delete/{playerID}")
+		public ResponseEntity<PlayerDTO> deletePlayer(@PathVariable("playerID") Long id)
 		{
 			return this.service.deletePlayer(id) ? 
 					new ResponseEntity<>(HttpStatus.NO_CONTENT) :
