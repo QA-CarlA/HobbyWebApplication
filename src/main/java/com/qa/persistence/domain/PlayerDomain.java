@@ -37,4 +37,6 @@ public class PlayerDomain
 		this.playerName = playerName;
 		this.playerIGN = playerIGN;
 	}
+	
+	
 }
