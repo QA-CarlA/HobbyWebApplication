@@ -1,9 +1,5 @@
 package com.qa.rest;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.request;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +21,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.HobbyWebAppApplication;
-import com.qa.persistence.domain.PlayerDomain;
 import com.qa.persistence.domain.TeamDomain;
 import com.qa.persistence.dto.PlayerDTO;
 import com.qa.persistence.dto.TeamDTO;

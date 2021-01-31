@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class PlayerDomain 
 {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long playerID;
@@ -28,4 +29,12 @@ public class PlayerDomain
 	
 	@ManyToOne
 	private TeamDomain team;
+	
+	public PlayerDomain(String playerName, String playerIGN) 
+	{
+		super();
+		this.playerID = 0L;
+		this.playerName = playerName;
+		this.playerIGN = playerIGN;
+	}
 }
