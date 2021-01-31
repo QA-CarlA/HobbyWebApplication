@@ -28,7 +28,7 @@ const createTeam = () =>
     }
     else
     {
-        fetch(`http://localhost:8081/team/create` ,
+        fetch(`http://localhost:8080/team/create` ,
         {
             method: 'POST',
             body: JSON.stringify({
@@ -52,7 +52,7 @@ const viewTeam = () =>
     viewTeamDisplay.innerHTML = "";
     const viewTeamIDValue = viewTeamID.value;
     let message = "";
-    fetch(`http://localhost:8081/team/read/${viewTeamIDValue}`)
+    fetch(`http://localhost:8080/team/read/${viewTeamIDValue}`)
     .then(response => response.json())
     .then(json => {
         if(json.teamName != undefined)
@@ -78,7 +78,7 @@ const viewAllTeam = () =>
 {
     viewAllDisplay.innerHTML = "";
     let message = "";
-    fetch(`http://localhost:8081/team/readAll`)
+    fetch(`http://localhost:8080/team/readAll`)
     .then(response => response.json())
     .then(json => {
         for(let i = 0; i < json.length; i++)
@@ -116,7 +116,7 @@ const updateTeam = () =>
     }
     if (boolID == true && boolName == true)
     {
-        fetch(`http://localhost:8081/team/update/${updateIDValue}` ,
+        fetch(`http://localhost:8080/team/update/${updateIDValue}` ,
         {
             method: 'PUT',
             body: JSON.stringify({
@@ -147,7 +147,7 @@ const deleteTeam = () =>
     deleteDisplay.innerHTML = "";
     const deleteIDValue = deleteID.value;
     let message = "";
-    fetch(`http://localhost:8081/team/delete/${deleteIDValue}` ,
+    fetch(`http://localhost:8080/team/delete/${deleteIDValue}` ,
     {
         method: 'DELETE'
     })
