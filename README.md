@@ -1,25 +1,48 @@
 # Apex Registration System
 
-The Apex Registration System allows Creatiing, Viewing, Updating and Deleting of a Player's and Team's details.
+The Apex Registration System allows Creating, Viewing, Updating and Deleting of a Player's and Team's details.
 
-### Prerequisites
-*Java (Java Version 14) - [Link](https://www.oracle.com/java/technologies/javase/jdk14-archive-downloads.html)
+### Technologies Used
+* Java (Java Version 14) - [Link](https://www.oracle.com/java/technologies/javase/jdk14-archive-downloads.html)
 
-*Maven - [Link](https://maven.apache.org/)
+* Maven - [Link](https://maven.apache.org/)
 
-*Spring - [Link](https://spring.io/tools)
+* Spring Boot - [Link](https://spring.io/tools)
 
-*Git (not mandatory but makes it easier) - [Link](https://git-scm.com)
+* Bootstrap (CSS Framework) - [Link](https://getbootstrap.com/)
+
+* Git (not mandatory but makes it easier) - [Link](https://git-scm.com)
 
 To verify that java has been installed properly you can type "java -version" on the command line likewise with maven by typing "mvn -version" on the command line
 
 ## Testing
 
-Currently the project has over 80% coverage
+To be able to run the tests, open Command Prompt on the project folder then type 'mvn test'
+```
+C:\Users\User\ProjectLocation\HobbyWebApp> mvn test
+```
+
+Currently the project has over 88.9% coverage
 
 <a href="https://imgur.com/YXQxRbh"><img src="https://i.imgur.com/YXQxRbh.png" title="source: imgur.com" /></a>
 
-I have used JUnit, Mockito and Selenium for testing
+### Unit Testing
+
+I have used JUnit to test the CRUD functions of the Player/Team service classes to make sure that it is interacting with the database correctly
+
+Located in the ***com/qa/services*** test folder.
+
+### Integration Testing
+
+I have used Mockito to test the Player/Team controller classes, Testing these classes does not require connecting to the database as the results are mocked. This allows me to tests if the controller class is able to handle the input that it receives via HTTP requests.
+
+Located in the ***com/qa/controllers*** test folder.
+
+### Selenium Testing
+
+I have used Selenium which is a automation tool that allowed me to test the functionality of my webpage.
+
+Located in the ***com/qa/selenium*** test folder.
 
 ## Built With
 
