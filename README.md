@@ -1,4 +1,4 @@
-# Apex Registration System
+# Hobby Web Application
 
 The Apex Registration System allows Creating, Viewing, Updating and Deleting of a Player's and Team's details using a website
 
