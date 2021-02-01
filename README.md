@@ -15,6 +15,34 @@ The Hobby Web Application (Apex Registration System) project allows Creating, Vi
 
 To verify that java has been installed properly you can type "java -version" on the command line likewise with maven by typing "mvn -version" on the command line
 
+### Installing
+
+To start off, navigate to the directory that you want to place the folder (in my case its C:\Users\User\ProjectLocation) using git or the Command Prompt
+If you don't have git installed then just download the zip file and extract it in the folder
+
+If you have git installed
+```
+-Open Command Prompt-
+cd Documents/ProjectLocation
+OR
+Right Click on ProgramLocation folder then press 'Git Bash here'
+```
+
+Copy the repository link and use 'git clone -insert link here-' 
+
+```
+C:\Users\User\ProjectLocation> git clone https://github.com/QA-CarlA/IMS-Starter.git
+```
+
+To run the Jar file, open to project folder, navigate to the JAR folder in documentation then run the jar file.
+
+```
+C:\Users\User\ProjectLocation> cd HobbyWebApplicatioon/Documentation/JAR
+C:\Users\User\ProjectLocation\IMS-Starter> java -jar HobbyWebApp-0.0.1-SNAPSHOT.jar 
+```
+
+This will run it in localhost:8080 (to access the web page) and localhost:8080/h2 (to access the DB directly)
+
 ## Testing
 
 To be able to run the tests, open Command Prompt on the project folder then type 'mvn test'
