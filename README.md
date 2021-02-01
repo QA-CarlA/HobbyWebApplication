@@ -1,6 +1,6 @@
 # Hobby Web Application
 
-The Apex Registration System allows Creating, Viewing, Updating and Deleting of a Player's and Team's details using a website
+The Hobby Web Application (Apex Registration System) project allows Creating, Viewing, Updating and Deleting of a Player's and Team's details using a web interface
 
 ### Technologies Used
 * Java (Java Version 14) - [Link](https://www.oracle.com/java/technologies/javase/jdk14-archive-downloads.html)
