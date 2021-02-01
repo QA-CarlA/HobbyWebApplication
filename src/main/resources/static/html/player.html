@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<style>
+    h1
+    {
+        text-align: center;
+    }
+</style>
+<body>
+   <!-- START navigation bar-->
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="/index.html" class="navbar-brand">Apex Team Registration</a>
+        <button class="btn" data-bs-toggle="collapse" href="#togglethis">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="togglethis">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="player.html" class="nav-link">Player</a>
+                </li>
+                <li class="nav-item">
+                    <a href="team.html" class="nav-link">Team</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- CRUD -->
+    <div>
+        <h1>Player</h1>
+        <div class="container">
+            <!-- Create Player -->
+            <h2>Create</h2>
+            <div class="row">
+                <div class="d-grid gap-3">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="playerName" required placeholder="Player Name:"/>
+                        <label for="playerName">Player Name:</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="playerIGN" required placeholder="Player IGN:"/>
+                        <label for="playerIGN">Player IGN:</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="number" class="form-control" id="teamID" required placeholder="Team ID:"/>
+                        <label for="teamID">Team ID:</label>
+                    </div>
+                    <div class="col-md" id = "createDisplay"></div>
+                    <button class="btn btn-dark" id="createBtn">Create</button>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- View Player -->
+            <div class="d-grid gap-3">
+                <h2>View Player</h2>
+            </div>
+            <div class="row">
+                <div class="d-grid gap-3">
+                    <div class="form-floating">
+                        <input type="number" class="form-control" id="viewPlayerID" placeholder="Player ID:">
+                        <label for="viewPlayerID">Player ID:</label>
+                    </div>
+                    <div class="col-md" id = "viewPlayerDisplay"></div>
+                    <button class="btn btn-dark" id="viewPlayerBtn">View Player By ID</button>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- View All Player -->
+            <div class="d-grid gap-3">
+                <h2>View All Players</h2>
+            </div>
+            <div class="row">
+                <div class="d-grid gap-3">
+                    <div class="col-md" id = "viewAllDisplay"></div>
+                    <button class="btn btn-dark" id="viewAllBtn">View All Players</button>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- Update Player -->
+            <div class="d-grid gap-3">
+                <h2>Update Players</h2>
+            </div>
+            <div class="row">
+                <div class="d-grid gap-3">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="updateID" required placeholder="Player ID:"/>
+                        <label for="playerID">Enter the ID of the player to be updated:</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="updateName" required placeholder="Player Name:"/>
+                        <label for="playerName">Player Name:</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="updateIGN" required placeholder="Player IGN:"/>
+                        <label for="playerIGN">Player IGN:</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="number" class="form-control" id="updateTeamID" required placeholder="Team ID:"/>
+                        <label for="teamID">Team ID:</label>
+                    </div>
+                    <div class="col-md" id = "updateDisplay"></div>
+                    <button class="btn btn-dark" id="updateBtn">Update Player</button>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- Delete Player -->
+            <div class="d-grid gap-3">
+                <h2>Delete Player</h2>
+            </div>
+            <div class="row">
+                <div class="d-grid gap-3">
+                    <div class="form-floating">
+                        <input type="number" class="form-control" id="deleteID" required placeholder="Player ID to be deleted:"/>
+                        <label for="deleteID">Player ID to be deleted:</label>
+                    </div>
+                    <div class="col-md" id = "deleteDisplay"></div>
+                    <button class="btn btn-dark" id="deleteBtn">Delete Player</button>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+     <!--Bootstrap script-->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" 
+     integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+     <script src="/js/player.js"></script>
+</body>
+</html>
