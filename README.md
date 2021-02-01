@@ -31,14 +31,14 @@ Right Click on ProgramLocation folder then press 'Git Bash here'
 Copy the repository link and use 'git clone -insert link here-' 
 
 ```
-C:\Users\User\ProjectLocation> git clone https://github.com/QA-CarlA/IMS-Starter.git
+C:\Users\User\ProjectLocation> git clone https://github.com/QA-CarlA/HobbyWebApplication.git
 ```
 
 To run the Jar file, open to project folder, navigate to the JAR folder in documentation then run the jar file.
 
 ```
-C:\Users\User\ProjectLocation> cd HobbyWebApplicatioon/Documentation/JAR
-C:\Users\User\ProjectLocation\IMS-Starter> java -jar HobbyWebApp-0.0.1-SNAPSHOT.jar 
+C:\Users\User\ProjectLocation> cd HobbyWebApplication/Documentation/JAR
+C:\Users\User\ProjectLocation\HobbyWebApplication> java -jar HobbyWebApp-0.0.1-SNAPSHOT.jar 
 ```
 
 This will run it in localhost:8080 (to access the web page) and localhost:8080/h2 (to access the DB directly)
@@ -47,7 +47,7 @@ This will run it in localhost:8080 (to access the web page) and localhost:8080/h
 
 To be able to run the tests, open Command Prompt on the project folder then type 'mvn test'
 ```
-C:\Users\User\ProjectLocation\HobbyWebApp> mvn test
+C:\Users\User\ProjectLocation\HobbyWebApplication> mvn test
 ```
 
 Currently the project has over 88.9% coverage
