@@ -1,6 +1,6 @@
 # Apex Registration System
 
-The Apex Registration System allows Creating, Viewing, Updating and Deleting of a Player's and Team's details.
+The Apex Registration System allows Creating, Viewing, Updating and Deleting of a Player's and Team's details using a website
 
 ### Technologies Used
 * Java (Java Version 14) - [Link](https://www.oracle.com/java/technologies/javase/jdk14-archive-downloads.html)
