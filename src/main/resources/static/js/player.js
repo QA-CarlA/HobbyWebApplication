@@ -52,7 +52,7 @@ const createPlayer = () =>
     }
     if(boolName == true && boolIGN == true && boolTeamID == true)
     {
-        fetch(`http://localhost:8081/player/create` ,
+        fetch(`http://localhost:8080/player/create` ,
         {
             method: 'POST',
             body: JSON.stringify({
@@ -92,19 +92,19 @@ const viewPlayer = () =>
     viewPlayerDisplay.innerHTML = "";
     const viewPlayerIDValue = viewPlayerID.value;
     let message = "";
-    fetch(`http://localhost:8081/player/read/${viewPlayerIDValue}`)
+    fetch(`http://localhost:8080/player/read/${viewPlayerIDValue}`)
     .then(response => response.json())
     .then(json =>
         {
             if (json.playerName != undefined)
             {
                 message = `Player ID: ${json.playerID}, Player Name: ${json.playerName}, Player IGN: ${json.playerIGN}`;
-                output(viewPlayerDisplay, details);
+                output(viewPlayerDisplay, message);
             }
             else
             {
                 message = "Player does not exist";
-                output(viewPlayerDisplay, details);
+                output(viewPlayerDisplay, message);
             }
         }).catch(err => console.error("Something went wrong: " + err))
 }
@@ -112,7 +112,7 @@ const viewPlayer = () =>
 const viewAllPlayer = () =>
 {
     viewAllDisplay.innerHTML = "";
-    fetch(`http://localhost:8081/player/readAll`)
+    fetch(`http://localhost:8080/player/readAll`)
     .then(response => response.json())
     .then(json => {
         console.log(json);
@@ -165,7 +165,7 @@ const updatePlayer = () =>
 
     if(boolID == true && boolName == true && boolIGN == true && boolTeamID == true)
     {
-        fetch(`http://localhost:8081/player/update/${updateIDValue}` ,
+        fetch(`http://localhost:8080/player/update/${updateIDValue}` ,
         {
             method: 'PUT',
             body: JSON.stringify({
@@ -208,7 +208,7 @@ const deletePlayer = () =>
     const deleteIDValue = deleteID.value;
     let p = document.createElement("p");
     let display = undefined;
-    fetch(`http://localhost:8081/player/delete/${deleteIDValue}` ,
+    fetch(`http://localhost:8080/player/delete/${deleteIDValue}` ,
     {
         method: 'DELETE'
     })
