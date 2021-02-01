@@ -2,34 +2,24 @@
 
 The Apex Registration System allows Creatiing, Viewing, Updating and Deleting of a Player's and Team's details.
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
 ### Prerequisites
 *Java (Java Version 14) - [Link](https://www.oracle.com/java/technologies/javase/jdk14-archive-downloads.html)
 
 *Maven - [Link](https://maven.apache.org/)
 
+*Spring - [Link](https://spring.io/tools)
+
 *Git (not mandatory but makes it easier) - [Link](https://git-scm.com)
 
 To verify that java has been installed properly you can type "java -version" on the command line likewise with maven by typing "mvn -version" on the command line
 
-### Installing
-TBA
+## Testing
 
-## Running the tests
+Currently the project has over 80% coverage
 
-TBA
-```
+<a href="https://imgur.com/YXQxRbh"><img src="https://i.imgur.com/YXQxRbh.png" title="source: imgur.com" /></a>
 
-```
-
-### Unit Tests 
-
-### Integration Tests
-
-### User Acceptance Tests
+I have used JUnit, Mockito and Selenium for testing
 
 ## Built With
 
